@@ -1,3 +1,5 @@
+let myArray = []
+
 const app = {
     init: function(selectors){
         this.max = 0
@@ -16,7 +18,6 @@ const app = {
             name: f.flickName.value
         }
 
-        //const flickName = ev.target.flickName.value
         const listItem= this.renderListItem(flick)
         this.list.appendChild(listItem)
 
@@ -25,10 +26,11 @@ const app = {
     },
     renderListItem(flick){
         const item = document.createElement("li")
+        myArray.push(flick.name)
+        //console.log(myArray)
         item.textContent = flick.name
         return item
     },
-
 }
 
 app.init({
