@@ -47,15 +47,29 @@ const app = {
       .addEventListener(
         'click', 
         this.removeFlick.bind(this, flick)
-      )
+        )
 
     item
       .querySelector('button.fav')
       .addEventListener(
         'click', 
         this.favFlick.bind(this, flick)
-      )
-    
+        )
+
+    item
+        .querySelector('button.up')
+        .addEventListener(
+        'click',
+        this.moveUp.bind(this, flick)
+        )
+
+    item
+        .querySelector('button.down')
+        .addEventListener(
+        'click',
+        this.moveDown.bind(this, flick)
+        )
+        
     return item
   },
 
@@ -76,6 +90,13 @@ const app = {
 
     this.max ++
     f.reset()
+  },
+
+  moveUp(flick,ev){
+    console.log("up")
+  },
+  moveDown(flick,ev){
+    console.log("down")
   },
 }
 
