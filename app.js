@@ -14,13 +14,14 @@ const app = {
         const flick = {
             id: this.max + 1,
             name: f.flickName.value,
-            favStatus: false,
+            favStatus: "false",
         }
 
         const listItem= this.renderListItem(flick)
         this.list.insertBefore(listItem, this.list.firstChild)
 
         this.max ++
+        f.reset()
     },
     renderListItem(flick){
         const item = document.createElement("li")
@@ -30,7 +31,7 @@ const app = {
         fav.setAttribute("class","button")
         fav.setAttribute("id", "f"+this.max)
         fav.style.position = "absolute"
-        fav.style.right = "10px"
+        fav.style.right = "300px"
         fav.addEventListener("click",this.favChanger.bind(this))
 
 
@@ -39,7 +40,7 @@ const app = {
         del.setAttribute("class","button")
         del.setAttribute("id","d"+this.max)
         del.style.position = "absolute"
-        del.style.right = "100px"
+        del.style.right = "390px"
         del.addEventListener("click",this.deleter.bind(this))
 
         this.myArray.push(flick)
@@ -55,11 +56,11 @@ const app = {
         li = ev.target.parentElement
         if(li.style.backgroundColor == "red"){
             li.style.backgroundColor = "white";
-            this.flick.favStatus = false;
+            this.flick.favStatus = "false";
         }
         else{
              li.style.backgroundColor = "red";
-             this.flick.favStatus = true;
+             this.flick.favStatus = "true";
         }
        
     },
