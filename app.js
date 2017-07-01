@@ -69,7 +69,7 @@ const app = {
         'click',
         this.moveDown.bind(this, flick)
         )
-    item.contentEditable = true
+    document.querySelector(".flick-name").contentEditable = true
     return item
   },
 
@@ -93,12 +93,10 @@ const app = {
   },
 
   moveUp(flick,ev){
-    console.log("up")
     newItem = ev.target.closest('.flick')
     this.list.insertBefore(newItem, newItem.previousSibling)
   },
   moveDown(flick,ev){
-    console.log("down")
     newItem = ev.target.closest('.flick')
     this.list.insertBefore(newItem, newItem.nextSibling.nextSibling)
   },
