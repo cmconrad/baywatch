@@ -69,7 +69,7 @@ const app = {
         'click',
         this.moveDown.bind(this, flick)
         )
-        
+    item.contentEditable = true
     return item
   },
 
